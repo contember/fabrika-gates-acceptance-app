@@ -18,6 +18,7 @@ export interface NotesTable {
 	trashed: boolean
 	created_by: string
 	version: number
+	pinned: boolean | null
 }
 
 export interface DB {
@@ -52,6 +53,7 @@ export const columns: TypedColumnList<DB> = {
 			'trashed',
 			'created_by',
 			'version',
+			'pinned',
 		],
 		foreignKeys: [],
 		notNull: ['id', 'workspace_id', 'title', 'trashed', 'created_by', 'version'],

@@ -17,7 +17,7 @@ function Notes() {
 	const notes = useQuery(api.notes.list)
 	return (
 		<main className="fui-app notes">
-			<PageHeader title="Notes" />
+			<PageHeader title="Notes (acceptance D2)" />
 			{notes.status === 'error'
 				? <ErrorState text={notes.error.message} onRetry={() => void notes.refetch()} />
 				: notes.status === 'success'
