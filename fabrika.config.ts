@@ -61,6 +61,8 @@ const services = (_ctx: ZeropsResourceContext): ZeropsServiceSpec[] => [
 export default defineApp({
 	id: NOTES_APP_ID,
 	schema: schemaFromContract(notesContract),
+	// D8: a declared secret that has no value on the environment.
+	pipeline: { secrets: ['ACCEPTANCE_API_TOKEN'] },
 	target: {
 		platform: 'zerops',
 		services,
